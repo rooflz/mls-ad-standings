@@ -1,6 +1,7 @@
 import json
 import re
 import time
+import urllib.parse
 import urllib.request
 from datetime import datetime
 from pathlib import Path
@@ -38,6 +39,33 @@ TEAM_LOOKUP = {
     "wake": "Wake FC",
 }
 
+# Regional home markets used when venue feeds omit city and state
+TEAM_HOME_ANCHORS = {
+    "Carolina Core FC": "High Point, NC",
+    "Carolina Velocity FC": "Raleigh, NC",
+    "Charleston SC": "Charleston, SC",
+    "Charlotte Eagles": "Charlotte, NC",
+    "Charlotte Independence Soccer Club": "Charlotte, NC",
+    "Fox Soccer Academy Carolinas": "Charlotte, NC",
+    "Lowcountry United": "Dorchester, SC",
+    "Queen City Mutiny FC": "Charlotte, NC",
+    "Triangle United Soccer Association": "Chapel Hill, NC",
+    "Wake FC": "Holly Springs, NC",
+}
+
+# Known complex overrides: takes priority over the home team's nominal market
+VENUE_SPECIFIC_ANCHORS = {
+    "soccer.com": ("Soccer.com Center", "Efland, NC"),
+    "efland": ("Soccer.com Center", "Efland, NC"),
+    "wakemed": ("WakeMed Soccer Park", "Cary, NC"),
+    "wral": ("WRAL Soccer Park", "Raleigh, NC"),
+    "ting": ("Ting Park", "Holly Springs, NC"),
+    "orthocarolina": ("OrthoCarolina Sportsplex", "Pineville, NC"),
+    "bryan park": ("Bryan Park Soccer Complex", "Browns Summit, NC"),
+    "truist point": ("Truist Point", "High Point, NC"),
+    "woodland": ("Woodland High School", "Dorchester, SC"),
+}
+
 
 def resolve_team(name: str) -> str | None:
     if not name:
@@ -55,8 +83,104 @@ def resolve_team(name: str) -> str | None:
     return None
 
 
+def clean_venue_for_maps_search(venue_str: str) -> str:
+    """Strips field annotations and numbers so Google Maps geocodes the facility accurately."""
+    cleaned = re.sub(r"\(.*?\)", "", venue_str)
+    cleaned = re.sub(
+        r"(?:-|\b)\s*(?:Stadium|Field\s*#?\d+|Pitch\s*#?\d+|Auxiliary)\b",
+        "",
+        cleaned,
+        flags=re.I,
+    )
+    cleaned = re.sub(r"\s*-\s*$", "", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    return cleaned if cleaned else venue_str.strip()
+
+
+def parse_location(raw_loc, home_team: str | None = None) -> dict:
+    """Parses event_location into display text and an anchored Google Maps search URL."""
+    if not raw_loc:
+        return {"display": "TBD", "maps_url": None}
+
+    venue = ""
+    field = ""
+    city = ""
+    state = ""
+    addr = ""
+
+    if isinstance(raw_loc, str):
+        venue = raw_loc.strip()
+    elif isinstance(raw_loc, dict):
+        venue = (
+            raw_loc.get("name")
+            or raw_loc.get("venue_name")
+            or raw_loc.get("facility")
+            or raw_loc.get("venue")
+            or raw_loc.get("title")
+            or ""
+        )
+        field = (
+            raw_loc.get("field")
+            or raw_loc.get("pitch")
+            or raw_loc.get("field_name")
+            or ""
+        )
+        addr = (
+            raw_loc.get("address")
+            or raw_loc.get("street")
+            or raw_loc.get("street_address")
+            or ""
+        )
+        city = raw_loc.get("city") or ""
+        state = raw_loc.get("state") or ""
+
+    if not venue and not addr:
+        return {"display": "TBD", "maps_url": None}
+
+    # 1. Display Label (keeps field & turf numbers for the card title)
+    display_parts = [p.strip() for p in [venue, field] if p and p.strip()]
+    display = " - ".join(display_parts) if display_parts else (addr or "TBD")
+
+    # 2. Check for venue-specific overrides (e.g. Soccer.com -> Efland, NC)
+    venue_lower = f"{venue} {addr}".lower()
+    override_name = None
+    override_region = None
+
+    for key, (canonical_name, canonical_region) in VENUE_SPECIFIC_ANCHORS.items():
+        if key in venue_lower:
+            override_name = canonical_name
+            override_region = canonical_region
+            break
+
+    # 3. Geocoding query formulation
+    search_venue = override_name or clean_venue_for_maps_search(venue)
+    query_parts = []
+
+    if addr:
+        query_parts.append(addr)
+    elif search_venue:
+        query_parts.append(search_venue)
+
+    if city and state:
+        query_parts.append(f"{city}, {state}")
+    elif state:
+        query_parts.append(state)
+    elif override_region:
+        query_parts.append(override_region)
+    elif home_team and home_team in TEAM_HOME_ANCHORS:
+        query_parts.append(TEAM_HOME_ANCHORS[home_team])
+
+    maps_query = ", ".join(query_parts)
+    encoded = urllib.parse.quote(maps_query)
+    maps_url = f"https://www.google.com/maps/search/?api=1&query={encoded}"
+
+    return {
+        "display": display,
+        "maps_url": maps_url,
+    }
+
+
 def fetch_all_matches() -> tuple[list, list]:
-    """Fetches feed and separates completed games from upcoming fixtures."""
     url = f"{FEED_URL}?_t={int(time.time() * 1000)}"
     print(f"Fetching season schedule feed from:\n  {url}")
 
@@ -85,7 +209,6 @@ def fetch_all_matches() -> tuple[list, list]:
         home_org = str(ev.get("home_organisation") or "")
         away_org = str(ev.get("away_organisation") or "")
 
-        # Target U13 Carolinas
         is_u13 = any("u13" in s.lower() for s in [division_str, home_squad, away_squad])
         if not is_u13:
             continue
@@ -105,10 +228,9 @@ def fetch_all_matches() -> tuple[list, list]:
         a_score = ev.get("away_score")
         is_completed = ev.get("completed", False)
         start_time = ev.get("start_time", "")
-        location = ev.get("event_location", "TBD")
+        location_data = parse_location(ev.get("event_location"), home_team=home_team)
 
-        has_scores = (h_score is not None and a_score is not None)
-        # Avoid unplayed placeholders with 0-0
+        has_scores = h_score is not None and a_score is not None
         is_real_game = has_scores and not (is_completed is False and int(h_score) == 0 and int(a_score) == 0)
 
         if is_real_game:
@@ -119,7 +241,7 @@ def fetch_all_matches() -> tuple[list, list]:
                 "home_score": int(h_score),
                 "away_score": int(a_score),
                 "start_time": start_time,
-                "location": location,
+                "location": location_data,
             })
         else:
             upcoming_matches.append({
@@ -127,7 +249,7 @@ def fetch_all_matches() -> tuple[list, list]:
                 "home": home_team,
                 "away": away_team,
                 "start_time": start_time,
-                "location": location,
+                "location": location_data,
             })
 
     print(f"Matched {len(completed_matches)} completed and {len(upcoming_matches)} upcoming U13 Carolinas games.")
@@ -143,7 +265,7 @@ def compile_standings(completed: list) -> list:
             "cs": 0, "form": [],
             "home_w": 0, "home_d": 0, "home_l": 0, "home_gf": 0, "home_ga": 0, "home_pts": 0,
             "away_w": 0, "away_d": 0, "away_l": 0, "away_gf": 0, "away_ga": 0, "away_pts": 0,
-            "match_logs": []
+            "match_logs": [],
         }
         for t in CAROLINAS_U13_TEAMS
     }
@@ -163,7 +285,7 @@ def compile_standings(completed: list) -> list:
                     "cs": 0, "form": [],
                     "home_w": 0, "home_d": 0, "home_l": 0, "home_gf": 0, "home_ga": 0, "home_pts": 0,
                     "away_w": 0, "away_d": 0, "away_l": 0, "away_gf": 0, "away_ga": 0, "away_pts": 0,
-                    "match_logs": []
+                    "match_logs": [],
                 }
 
         stats[h]["gp"] += 1
@@ -178,7 +300,6 @@ def compile_standings(completed: list) -> list:
         if hs == 0:
             stats[a]["cs"] += 1
 
-        # Outcome handling & logs
         if hs > as_:
             stats[h]["w"] += 1
             stats[h]["pts"] += 3
@@ -223,14 +344,13 @@ def compile_standings(completed: list) -> list:
         stats[a]["away_gf"] += as_
         stats[a]["away_ga"] += hs
 
-        # Attach itemized match logs for the accordion view
         stats[h]["match_logs"].append({
             "opponent": a,
             "role": "Home",
             "result": h_res,
             "score": f"{hs} - {as_}",
             "date": date_str,
-            "location": m.get("location", ""),
+            "location": m.get("location", {}),
         })
         stats[a]["match_logs"].append({
             "opponent": h,
@@ -238,7 +358,7 @@ def compile_standings(completed: list) -> list:
             "result": a_res,
             "score": f"{as_} - {hs}",
             "date": date_str,
-            "location": m.get("location", ""),
+            "location": m.get("location", {}),
         })
 
     table = list(stats.values())
@@ -249,7 +369,7 @@ def compile_standings(completed: list) -> list:
         t["ga_per_g"] = round(t["ga"] / t["gp"], 2) if t["gp"] > 0 else 0.0
         t["cs_pct"] = round((t["cs"] / t["gp"]) * 100, 1) if t["gp"] > 0 else 0.0
         t["recent_form"] = t["form"][-5:]
-        t["match_logs"].reverse()  # Newest matches first
+        t["match_logs"].reverse()
 
     table.sort(
         key=lambda x: (x["pts"], x["ppg"], x["gd"], x["gf"], -ord(x["team"][0])),
@@ -318,10 +438,10 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
             </div>
         </header>
 
-        <!-- KPI Summary Cards -->
+        <!-- KPI Cards -->
         <div id="statsRow" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
 
-        <!-- Standings Table with Expandable Accordions -->
+        <!-- Standings Table -->
         <div class="space-y-2">
             <div class="flex items-center justify-between px-1">
                 <h2 class="text-lg font-bold text-white flex items-center gap-2">
@@ -359,7 +479,7 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
             </div>
         </div>
 
-        <!-- Upcoming Schedule & Opponent Strength Matrix -->
+        <!-- Upcoming Schedule & Opponent Strength -->
         <div class="space-y-4 pt-4 border-t border-slate-800/80">
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div>
@@ -378,9 +498,7 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
                 </div>
             </div>
 
-            <div id="upcomingScheduleGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <!-- Rendered dynamically via JavaScript -->
-            </div>
+            <div id="upcomingScheduleGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
         </div>
 
         <footer class="text-center text-xs text-slate-500 py-6 border-t border-slate-800/40">
@@ -395,7 +513,6 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
         let currentSort = {{ column: 'pts', ascending: false }};
         let expandedTeam = null;
 
-        // Populate Scout Team dropdown (Default focus on Carolina Velocity FC)
         const teamSelect = document.getElementById("teamFocusSelect");
         initialData.forEach(t => {{
             const opt = document.createElement("option");
@@ -479,7 +596,6 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
                     </tr>
                 `;
 
-                // Accordion Drawer
                 if (isExpanded) {{
                     const logs = t.match_logs || [];
                     const logRows = logs.length > 0 ? logs.map(m => {{
@@ -488,12 +604,23 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
                             : (m.result === 'D' 
                                 ? '<span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-slate-800 text-slate-300 border border-slate-700">DRAW</span>'
                                 : '<span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-rose-950 text-rose-400 border border-rose-800">LOSS</span>');
+                        
+                        const locObj = m.location || {{}};
+                        const locText = locObj.display || "";
+                        const mapsUrl = locObj.maps_url;
+
                         return `
                             <div class="flex items-center justify-between text-xs py-2 border-b border-slate-800/80 last:border-0">
                                 <div class="flex items-center gap-3">
                                     <span class="text-slate-500 font-mono w-20">${{m.date}}</span>
                                     <span class="px-1.5 py-0.5 rounded text-[10px] font-semibold ${{m.role === 'Home' ? 'bg-slate-800 text-slate-300' : 'bg-slate-900 text-slate-500 border border-slate-800'}}">${{m.role}}</span>
                                     <span class="font-bold text-white">${{m.opponent}}</span>
+                                    ${{mapsUrl ? `
+                                        <a href="${{mapsUrl}}" target="_blank" rel="noopener noreferrer" 
+                                           class="text-[11px] text-slate-500 hover:text-cyan-400 transition hidden sm:inline-flex items-center gap-1" title="${{locText}}">
+                                            &bull; <span>${{locText}}</span>
+                                        </a>
+                                    ` : ''}}
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span class="font-mono font-bold text-slate-200">${{m.score}}</span>
@@ -507,8 +634,6 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
                         <tr class="bg-slate-950/70 border-b border-slate-800">
                             <td colspan="16" class="p-4 sm:p-6">
                                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                                    
-                                    <!-- Match History Log -->
                                     <div class="lg:col-span-2 space-y-2">
                                         <div class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center justify-between">
                                             <span>Full Season Match Results (${{logs.length}})</span>
@@ -519,7 +644,6 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
                                         </div>
                                     </div>
 
-                                    <!-- Home / Away Analytical Splits -->
                                     <div class="space-y-2">
                                         <div class="text-xs font-bold text-slate-300 uppercase tracking-wider">Performance Splits</div>
                                         <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 space-y-4">
@@ -549,7 +673,6 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </td>
                         </tr>
@@ -592,9 +715,7 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
                 const homeStats = initialData.find(t => t.team === m.home) || {{ rank: '-', ppg: 0, form: [] }};
                 const awayStats = initialData.find(t => t.team === m.away) || {{ rank: '-', ppg: 0, form: [] }};
                 
-                // If focused on a single team, scout the opponent
                 const isHome = selected === m.home;
-                const oppTeam = isHome ? m.away : m.home;
                 const oppStats = isHome ? awayStats : homeStats;
                 
                 const formattedDate = m.start_time 
@@ -604,17 +725,31 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
                     ? new Date(m.start_time).toLocaleTimeString(undefined, {{ hour: 'numeric', minute: '2-digit' }})
                     : "";
 
+                const loc = m.location || {{}};
+                const locDisplay = loc.display || "TBD";
+                const mapsUrl = loc.maps_url;
+
                 return `
                     <div class="bg-slate-900/70 border border-slate-800 hover:border-slate-700 transition rounded-2xl p-5 shadow-lg flex flex-col justify-between space-y-4">
-                        
                         <div>
                             <div class="flex items-center justify-between text-xs text-slate-400 mb-3 border-b border-slate-800 pb-2">
                                 <span class="font-bold text-cyan-400">${{formattedDate}} ${{formattedTime ? '&bull; ' + formattedTime : ''}}</span>
-                                <span class="truncate max-w-[150px] text-slate-500" title="${{m.location}}">${{m.location}}</span>
+                                ${{mapsUrl ? `
+                                    <a href="${{mapsUrl}}" target="_blank" rel="noopener noreferrer" 
+                                       class="inline-flex items-center gap-1.5 text-slate-400 hover:text-cyan-400 transition truncate max-w-[190px] group" 
+                                       title="Open in Google Maps: ${{locDisplay}}">
+                                        <svg class="w-3.5 h-3.5 flex-shrink-0 text-slate-500 group-hover:text-cyan-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        </svg>
+                                        <span class="truncate underline decoration-dotted decoration-slate-600 underline-offset-2">${{locDisplay}}</span>
+                                    </a>
+                                ` : `
+                                    <span class="truncate max-w-[190px] text-slate-500" title="${{locDisplay}}">${{locDisplay}}</span>
+                                `}}
                             </div>
 
                             <div class="space-y-3">
-                                <!-- Home Team -->
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center gap-2">
                                         <span class="text-[10px] font-bold text-slate-500 px-1.5 py-0.5 rounded bg-slate-800">H</span>
@@ -626,7 +761,6 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
                                     </div>
                                 </div>
 
-                                <!-- Away Team -->
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center gap-2">
                                         <span class="text-[10px] font-bold text-slate-500 px-1.5 py-0.5 rounded bg-slate-800">A</span>
@@ -646,7 +780,6 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
                                 ${{getOpponentStrengthBadge(oppStats.rank, oppStats.ppg)}}
                             </div>
                         ` : ''}}
-
                     </div>
                 `;
             }}).join('');
@@ -661,7 +794,8 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
             }}
 
             currentData.sort((a, b) => {{
-                let valA = a[key], valB = b[key];
+                let valA = a[key];
+                let valB = b[key];
                 if (typeof valA === 'string') return currentSort.ascending ? valA.localeCompare(valB) : valB.localeCompare(valA);
                 return currentSort.ascending ? valA - valB : valB - valA;
             }});
@@ -687,7 +821,6 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
             link.click();
         }}
 
-        // Initial setup
         renderKPIs(currentData);
         renderTable(currentData);
         renderUpcomingSchedule();
@@ -703,11 +836,10 @@ def generate_html_dashboard(standings: list, upcoming: list, output_filename: st
 if __name__ == "__main__":
     completed_matches, upcoming_matches = fetch_all_matches()
 
-    # Cache combined data locally
     with open(MATCHES_CACHE, "w", encoding="utf-8") as f:
         json.dump({
             "completed": completed_matches,
-            "upcoming": upcoming_matches
+            "upcoming": upcoming_matches,
         }, f, indent=2)
 
     standings = compile_standings(completed_matches)
