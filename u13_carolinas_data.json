@@ -1,0 +1,1158 @@
+{
+  "completed": [
+    {
+      "game_id": "5864638",
+      "home": "Fox Soccer Academy Carolinas",
+      "away": "Charlotte Independence Soccer Club",
+      "home_score": 3,
+      "away_score": 5,
+      "start_time": "2026-08-30T14:00:00Z",
+      "location": {
+        "id": 52151,
+        "name": "Langtree Charter Academy Upper - Field 1/Turf"
+      }
+    },
+    {
+      "game_id": "5864987",
+      "home": "Charlotte Eagles",
+      "away": "Carolina Core FC",
+      "home_score": 3,
+      "away_score": 0,
+      "start_time": "2026-09-12T15:00:00Z",
+      "location": {
+        "id": 56010,
+        "name": "Charlotte Eagles Soccer Complex - Field 3"
+      }
+    },
+    {
+      "game_id": "5862304",
+      "home": "Queen City Mutiny FC",
+      "away": "Wake FC",
+      "home_score": 0,
+      "away_score": 2,
+      "start_time": "2026-09-12T18:00:00Z",
+      "location": {
+        "id": 10,
+        "name": "Elon Park - Field 1"
+      }
+    },
+    {
+      "game_id": "5863804",
+      "home": "Carolina Velocity FC",
+      "away": "Triangle United Soccer Association",
+      "home_score": 1,
+      "away_score": 0,
+      "start_time": "2026-09-12T19:00:00Z",
+      "location": {
+        "id": 7885,
+        "name": "Soccer.com - #5"
+      }
+    },
+    {
+      "game_id": "5863964",
+      "home": "Charlotte Independence Soccer Club",
+      "away": "Lowcountry United",
+      "home_score": 5,
+      "away_score": 4,
+      "start_time": "2026-09-12T19:00:00Z",
+      "location": {
+        "id": 55775,
+        "name": "BMX - Field 2 "
+      }
+    },
+    {
+      "game_id": "5864619",
+      "home": "Fox Soccer Academy Carolinas",
+      "away": "Charleston SC",
+      "home_score": 5,
+      "away_score": 0,
+      "start_time": "2026-09-12T19:00:00Z",
+      "location": {
+        "id": 52154,
+        "name": "Cornelius Rd Park - Field 3/Turf"
+      }
+    },
+    {
+      "game_id": "5863995",
+      "home": "Charlotte Independence Soccer Club",
+      "away": "Charleston SC",
+      "home_score": 6,
+      "away_score": 2,
+      "start_time": "2026-09-13T13:00:00Z",
+      "location": {
+        "id": 55775,
+        "name": "BMX - Field 2 "
+      }
+    },
+    {
+      "game_id": "5864644",
+      "home": "Fox Soccer Academy Carolinas",
+      "away": "Lowcountry United",
+      "home_score": 2,
+      "away_score": 0,
+      "start_time": "2026-09-13T18:00:00Z",
+      "location": {
+        "id": 52154,
+        "name": "Cornelius Rd Park - Field 3/Turf"
+      }
+    },
+    {
+      "game_id": "5862604",
+      "home": "Triangle United Soccer Association",
+      "away": "Wake FC",
+      "home_score": 1,
+      "away_score": 7,
+      "start_time": "2026-09-13T19:00:00Z",
+      "location": {
+        "id": 8051,
+        "name": "Soccer.com - #3"
+      }
+    },
+    {
+      "game_id": "5862952",
+      "home": "Carolina Core FC",
+      "away": "Triangle United Soccer Association",
+      "home_score": 1,
+      "away_score": 1,
+      "start_time": "2026-09-19T14:00:00Z",
+      "location": {
+        "id": 51925,
+        "name": "Phillips Park Soccer Complex Field #1"
+      }
+    },
+    {
+      "game_id": "5864414",
+      "home": "Lowcountry United",
+      "away": "Charlotte Eagles",
+      "home_score": 0,
+      "away_score": 3,
+      "start_time": "2026-09-19T17:00:00Z",
+      "location": {
+        "id": 56179,
+        "name": "JJ Main Complex Field C"
+      }
+    },
+    {
+      "game_id": "5862232",
+      "home": "Queen City Mutiny FC",
+      "away": "Charlotte Independence Soccer Club",
+      "home_score": 0,
+      "away_score": 1,
+      "start_time": "2026-09-19T18:00:00Z",
+      "location": {
+        "id": 11,
+        "name": "Elon Park - Field 2"
+      }
+    },
+    {
+      "game_id": "5864159",
+      "home": "Charleston SC",
+      "away": "Queen City Mutiny FC",
+      "home_score": 2,
+      "away_score": 0,
+      "start_time": "2026-09-20T13:00:00Z",
+      "location": {
+        "id": 56110,
+        "name": "Woodland High School - Stadium (Turf)"
+      }
+    },
+    {
+      "game_id": "5864577",
+      "home": "Fox Soccer Academy Carolinas",
+      "away": "Carolina Velocity FC",
+      "home_score": 4,
+      "away_score": 3,
+      "start_time": "2026-09-20T16:00:00Z",
+      "location": {
+        "id": 52155,
+        "name": "Jennings Park - Field 3/Turf"
+      }
+    },
+    {
+      "game_id": "5864061",
+      "home": "Charlotte Independence Soccer Club",
+      "away": "Charlotte Eagles",
+      "home_score": 1,
+      "away_score": 0,
+      "start_time": "2026-09-26T17:00:00Z",
+      "location": {
+        "id": 51533,
+        "name": "Richard Barry Memorial Park - Field 4"
+      }
+    },
+    {
+      "game_id": "5862712",
+      "home": "Wake FC",
+      "away": "Charleston SC",
+      "home_score": 4,
+      "away_score": 1,
+      "start_time": "2026-09-26T18:30:00Z",
+      "location": {
+        "id": 53023,
+        "name": "Lee County Athletic Park Field 6"
+      }
+    },
+    {
+      "game_id": "5863906",
+      "home": "Carolina Velocity FC",
+      "away": "Lowcountry United",
+      "home_score": 1,
+      "away_score": 3,
+      "start_time": "2026-09-26T19:00:00Z",
+      "location": {
+        "id": 7885,
+        "name": "Soccer.com - #5"
+      }
+    },
+    {
+      "game_id": "5862730",
+      "home": "Wake FC",
+      "away": "Lowcountry United",
+      "home_score": 1,
+      "away_score": 4,
+      "start_time": "2026-09-27T13:00:00Z",
+      "location": {
+        "id": 66,
+        "name": "Ting Park - Ting Park 1"
+      }
+    },
+    {
+      "game_id": "5863888",
+      "home": "Carolina Velocity FC",
+      "away": "Charleston SC",
+      "home_score": 2,
+      "away_score": 0,
+      "start_time": "2026-09-27T13:00:00Z",
+      "location": {
+        "id": 7885,
+        "name": "Soccer.com - #5"
+      }
+    },
+    {
+      "game_id": "5862928",
+      "home": "Carolina Core FC",
+      "away": "Queen City Mutiny FC",
+      "home_score": 2,
+      "away_score": 0,
+      "start_time": "2026-09-27T19:00:00Z",
+      "location": {
+        "id": 49493,
+        "name": "Phillips Park Soccer Complex - Field 2"
+      }
+    },
+    {
+      "game_id": "5862136",
+      "home": "Queen City Mutiny FC",
+      "away": "Charlotte Eagles",
+      "home_score": 1,
+      "away_score": 4,
+      "start_time": "2026-10-03T17:00:00Z",
+      "location": {
+        "id": 11,
+        "name": "Elon Park - Field 2"
+      }
+    },
+    {
+      "game_id": "5864372",
+      "home": "Lowcountry United",
+      "away": "Charleston SC",
+      "home_score": 1,
+      "away_score": 2,
+      "start_time": "2026-10-03T17:00:00Z",
+      "location": {
+        "id": 52106,
+        "name": "Bayview Soccer Complex - Field 3"
+      }
+    },
+    {
+      "game_id": "5862958",
+      "home": "Carolina Core FC",
+      "away": "Wake FC",
+      "home_score": 0,
+      "away_score": 1,
+      "start_time": "2026-10-04T15:00:00Z",
+      "location": {
+        "id": 25580,
+        "name": "Ivey Redmon Sports Complex - Field 2"
+      }
+    },
+    {
+      "game_id": "5864177",
+      "home": "Charleston SC",
+      "away": "Charlotte Eagles",
+      "home_score": 3,
+      "away_score": 1,
+      "start_time": "2026-10-04T15:00:00Z",
+      "location": {
+        "id": 56110,
+        "name": "Woodland High School - Stadium (Turf)"
+      }
+    },
+    {
+      "game_id": "5864432",
+      "home": "Lowcountry United",
+      "away": "Queen City Mutiny FC",
+      "home_score": 5,
+      "away_score": 3,
+      "start_time": "2026-10-04T15:00:00Z",
+      "location": {
+        "id": 52105,
+        "name": "Bayview Soccer Complex - Field 1"
+      }
+    },
+    {
+      "game_id": "5862520",
+      "home": "Triangle United Soccer Association",
+      "away": "Fox Soccer Academy Carolinas",
+      "home_score": 1,
+      "away_score": 2,
+      "start_time": "2026-10-04T17:00:00Z",
+      "location": {
+        "id": 367,
+        "name": "Cedar Falls Park - #3"
+      }
+    }
+  ],
+  "upcoming": [
+    {
+      "game_id": "5862844",
+      "home": "Carolina Core FC",
+      "away": "Lowcountry United",
+      "start_time": "2026-10-17T17:00:00Z",
+      "location": {
+        "id": 51925,
+        "name": "Phillips Park Soccer Complex Field #1"
+      }
+    },
+    {
+      "game_id": "5862544",
+      "home": "Triangle United Soccer Association",
+      "away": "Charleston SC",
+      "start_time": "2026-10-17T19:00:00Z",
+      "location": {
+        "id": 7887,
+        "name": "Soccer.com - #2"
+      }
+    },
+    {
+      "game_id": "5862526",
+      "home": "Triangle United Soccer Association",
+      "away": "Lowcountry United",
+      "start_time": "2026-10-18T13:00:00Z",
+      "location": {
+        "id": 45882,
+        "name": "Southern Community Park - Field 1"
+      }
+    },
+    {
+      "game_id": "5862862",
+      "home": "Carolina Core FC",
+      "away": "Charleston SC",
+      "start_time": "2026-10-18T13:00:00Z",
+      "location": {
+        "id": 51925,
+        "name": "Phillips Park Soccer Complex Field #1"
+      }
+    },
+    {
+      "game_id": "5864116",
+      "home": "Charlotte Independence Soccer Club",
+      "away": "Wake FC",
+      "start_time": "2026-10-18T15:00:00Z",
+      "location": {
+        "id": 52998,
+        "name": "Richard Barry Memorial Park - Field 2"
+      }
+    },
+    {
+      "game_id": "5863810",
+      "home": "Carolina Velocity FC",
+      "away": "Queen City Mutiny FC",
+      "start_time": "2026-10-18T16:30:00Z",
+      "location": {
+        "id": 8092,
+        "name": "Middle Creek Park - field 2"
+      }
+    },
+    {
+      "game_id": "5864559",
+      "home": "Fox Soccer Academy Carolinas",
+      "away": "Charlotte Eagles",
+      "start_time": "2026-10-18T19:00:00Z",
+      "location": {
+        "id": 52154,
+        "name": "Cornelius Rd Park - Field 3/Turf"
+      }
+    },
+    {
+      "game_id": "5862670",
+      "home": "Wake FC",
+      "away": "Charlotte Eagles",
+      "start_time": "2026-10-24T16:00:00Z",
+      "location": {
+        "id": 52193,
+        "name": "David R. Kahn Community Campus Field #1"
+      }
+    },
+    {
+      "game_id": "5862898",
+      "home": "Carolina Core FC",
+      "away": "Carolina Velocity FC",
+      "start_time": "2026-10-25T13:00:00Z",
+      "location": {
+        "id": 25580,
+        "name": "Ivey Redmon Sports Complex - Field 2"
+      }
+    },
+    {
+      "game_id": "5862562",
+      "home": "Triangle United Soccer Association",
+      "away": "Charlotte Independence Soccer Club",
+      "start_time": "2026-10-25T17:00:00Z",
+      "location": {
+        "id": 367,
+        "name": "Cedar Falls Park - #3"
+      }
+    },
+    {
+      "game_id": "5864945",
+      "home": "Charlotte Eagles",
+      "away": "Lowcountry United",
+      "start_time": "2026-10-25T19:00:00Z",
+      "location": {
+        "id": 55891,
+        "name": "Charlotte Eagles Soccer Complex - Field 1"
+      }
+    },
+    {
+      "game_id": "5863846",
+      "home": "Carolina Velocity FC",
+      "away": "Charlotte Eagles",
+      "start_time": "2026-10-31T15:00:00Z",
+      "location": {
+        "id": 7888,
+        "name": "Soccer.com - #1"
+      }
+    },
+    {
+      "game_id": "5864354",
+      "home": "Lowcountry United",
+      "away": "Charlotte Independence Soccer Club",
+      "start_time": "2026-10-31T17:00:00Z",
+      "location": {
+        "id": 52105,
+        "name": "Bayview Soccer Complex - Field 1"
+      }
+    },
+    {
+      "game_id": "5864257",
+      "home": "Charleston SC",
+      "away": "Fox Soccer Academy Carolinas",
+      "start_time": "2026-10-31T19:00:00Z",
+      "location": {
+        "id": 56115,
+        "name": "CSC Daniel Island Soccer Complex - Field 2"
+      }
+    },
+    {
+      "game_id": "5864220",
+      "home": "Charleston SC",
+      "away": "Charlotte Independence Soccer Club",
+      "start_time": "2026-11-01T14:00:00Z",
+      "location": {
+        "id": 56110,
+        "name": "Woodland High School - Stadium (Turf)"
+      }
+    },
+    {
+      "game_id": "5864328",
+      "home": "Lowcountry United",
+      "away": "Fox Soccer Academy Carolinas",
+      "start_time": "2026-11-01T14:00:00Z",
+      "location": {
+        "id": 52105,
+        "name": "Bayview Soccer Complex - Field 1"
+      }
+    },
+    {
+      "game_id": "5862610",
+      "home": "Triangle United Soccer Association",
+      "away": "Queen City Mutiny FC",
+      "start_time": "2026-11-01T20:00:00Z",
+      "location": {
+        "id": 367,
+        "name": "Cedar Falls Park - #3"
+      }
+    },
+    {
+      "game_id": "5862568",
+      "home": "Triangle United Soccer Association",
+      "away": "Charlotte Eagles",
+      "start_time": "2026-11-07T15:00:00Z",
+      "location": {
+        "id": 367,
+        "name": "Cedar Falls Park - #3"
+      }
+    },
+    {
+      "game_id": "5864122",
+      "home": "Charleston SC",
+      "away": "Wake FC",
+      "start_time": "2026-11-07T18:00:00Z",
+      "location": {
+        "id": 56110,
+        "name": "Woodland High School - Stadium (Turf)"
+      }
+    },
+    {
+      "game_id": "5864396",
+      "home": "Lowcountry United",
+      "away": "Carolina Velocity FC",
+      "start_time": "2026-11-07T18:00:00Z",
+      "location": {
+        "id": 52105,
+        "name": "Bayview Soccer Complex - Field 1"
+      }
+    },
+    {
+      "game_id": "5864490",
+      "home": "Lowcountry United",
+      "away": "Wake FC",
+      "start_time": "2026-11-08T14:00:00Z",
+      "location": {
+        "id": 52105,
+        "name": "Bayview Soccer Complex - Field 1"
+      }
+    },
+    {
+      "game_id": "5864208",
+      "home": "Charleston SC",
+      "away": "Carolina Velocity FC",
+      "start_time": "2026-11-08T15:45:00Z",
+      "location": {
+        "id": 56110,
+        "name": "Woodland High School - Stadium (Turf)"
+      }
+    },
+    {
+      "game_id": "5863945",
+      "home": "Charlotte Independence Soccer Club",
+      "away": "Carolina Core FC",
+      "start_time": "2026-11-08T16:00:00Z",
+      "location": {
+        "id": 55842,
+        "name": "Bailey Road Park - Field 2"
+      }
+    },
+    {
+      "game_id": "5864538",
+      "home": "Fox Soccer Academy Carolinas",
+      "away": "Queen City Mutiny FC",
+      "start_time": "2026-11-08T18:00:00Z",
+      "location": {
+        "id": 52151,
+        "name": "Langtree Charter Academy Upper - Field 1/Turf"
+      }
+    },
+    {
+      "game_id": "5864969",
+      "home": "Charlotte Eagles",
+      "away": "Charleston SC",
+      "start_time": "2026-11-14T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5862802",
+      "home": "Wake FC",
+      "away": "Carolina Velocity FC",
+      "start_time": "2026-11-21T14:00:00Z",
+      "location": {
+        "id": 52697,
+        "name": "Womble Park - Field 2"
+      }
+    },
+    {
+      "game_id": "5863870",
+      "home": "Carolina Velocity FC",
+      "away": "Charlotte Independence Soccer Club",
+      "start_time": "2026-12-05T16:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864141",
+      "home": "Charleston SC",
+      "away": "Triangle United Soccer Association",
+      "start_time": "2027-01-16T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864310",
+      "home": "Lowcountry United",
+      "away": "Carolina Core FC",
+      "start_time": "2027-01-16T18:00:00Z",
+      "location": {
+        "id": 52105,
+        "name": "Bayview Soccer Complex - Field 1"
+      }
+    },
+    {
+      "game_id": "5864277",
+      "home": "Charleston SC",
+      "away": "Carolina Core FC",
+      "start_time": "2027-01-17T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864452",
+      "home": "Lowcountry United",
+      "away": "Triangle United Soccer Association",
+      "start_time": "2027-01-17T14:00:00Z",
+      "location": {
+        "id": 52105,
+        "name": "Bayview Soccer Complex - Field 1"
+      }
+    },
+    {
+      "game_id": "5862214",
+      "home": "Queen City Mutiny FC",
+      "away": "Charleston SC",
+      "start_time": "2027-01-24T15:00:00Z",
+      "location": {
+        "id": 10,
+        "name": "Elon Park - Field 1"
+      }
+    },
+    {
+      "game_id": "5862748",
+      "home": "Wake FC",
+      "away": "Fox Soccer Academy Carolinas",
+      "start_time": "2027-01-30T18:00:00Z",
+      "location": {
+        "id": 27857,
+        "name": "Womble Park - Field 1"
+      }
+    },
+    {
+      "game_id": "5862676",
+      "home": "Wake FC",
+      "away": "Charlotte Eagles",
+      "start_time": "2027-01-31T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5862460",
+      "home": "Triangle United Soccer Association",
+      "away": "Carolina Core FC",
+      "start_time": "2027-02-06T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5862766",
+      "home": "Wake FC",
+      "away": "Carolina Velocity FC",
+      "start_time": "2027-02-06T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864601",
+      "home": "Fox Soccer Academy Carolinas",
+      "away": "Charlotte Independence Soccer Club",
+      "start_time": "2027-02-06T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5862142",
+      "home": "Queen City Mutiny FC",
+      "away": "Charlotte Eagles",
+      "start_time": "2027-02-06T19:00:00Z",
+      "location": {
+        "id": 10,
+        "name": "Elon Park - Field 1"
+      }
+    },
+    {
+      "game_id": "5862808",
+      "home": "Carolina Core FC",
+      "away": "Charlotte Eagles",
+      "start_time": "2027-02-07T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5863852",
+      "home": "Carolina Velocity FC",
+      "away": "Fox Soccer Academy Carolinas",
+      "start_time": "2027-02-07T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864067",
+      "home": "Charlotte Independence Soccer Club",
+      "away": "Queen City Mutiny FC",
+      "start_time": "2027-02-07T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5862652",
+      "home": "Wake FC",
+      "away": "Triangle United Soccer Association",
+      "start_time": "2027-02-07T14:00:00Z",
+      "location": {
+        "id": 66,
+        "name": "Ting Park - Ting Park 1"
+      }
+    },
+    {
+      "game_id": "5863982",
+      "home": "Charlotte Independence Soccer Club",
+      "away": "Lowcountry United",
+      "start_time": "2027-02-13T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864963",
+      "home": "Charlotte Eagles",
+      "away": "Charleston SC",
+      "start_time": "2027-02-13T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5862256",
+      "home": "Queen City Mutiny FC",
+      "away": "Carolina Core FC",
+      "start_time": "2027-02-13T19:00:00Z",
+      "location": {
+        "id": 10,
+        "name": "Elon Park - Field 1"
+      }
+    },
+    {
+      "game_id": "5863988",
+      "home": "Charlotte Independence Soccer Club",
+      "away": "Charleston SC",
+      "start_time": "2027-02-14T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864939",
+      "home": "Charlotte Eagles",
+      "away": "Lowcountry United",
+      "start_time": "2027-02-14T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864031",
+      "home": "Charlotte Independence Soccer Club",
+      "away": "Carolina Velocity FC",
+      "start_time": "2027-02-21T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864849",
+      "home": "Charlotte Eagles",
+      "away": "Wake FC",
+      "start_time": "2027-02-21T11:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5862784",
+      "home": "Wake FC",
+      "away": "Charlotte Independence Soccer Club",
+      "start_time": "2027-02-27T18:00:00Z",
+      "location": {
+        "id": 66,
+        "name": "Ting Park - Ting Park 1"
+      }
+    },
+    {
+      "game_id": "5862274",
+      "home": "Queen City Mutiny FC",
+      "away": "Triangle United Soccer Association",
+      "start_time": "2027-02-27T18:30:00Z",
+      "location": {
+        "id": 10,
+        "name": "Elon Park - Field 1"
+      }
+    },
+    {
+      "game_id": "5862616",
+      "home": "Triangle United Soccer Association",
+      "away": "Queen City Mutiny FC",
+      "start_time": "2027-03-14T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5862880",
+      "home": "Carolina Core FC",
+      "away": "Charlotte Independence Soccer Club",
+      "start_time": "2027-03-14T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864498",
+      "home": "Fox Soccer Academy Carolinas",
+      "away": "Wake FC",
+      "start_time": "2027-03-14T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864903",
+      "home": "Charlotte Eagles",
+      "away": "Carolina Velocity FC",
+      "start_time": "2027-03-14T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5862694",
+      "home": "Wake FC",
+      "away": "Carolina Core FC",
+      "start_time": "2027-03-20T13:00:00Z",
+      "location": {
+        "id": 67,
+        "name": "Ting Park - Ting Park 2"
+      }
+    },
+    {
+      "game_id": "5862178",
+      "home": "Queen City Mutiny FC",
+      "away": "Charlotte Independence Soccer Club",
+      "start_time": "2027-04-04T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864238",
+      "home": "Charleston SC",
+      "away": "Lowcountry United",
+      "start_time": "2027-04-04T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864583",
+      "home": "Fox Soccer Academy Carolinas",
+      "away": "Carolina Velocity FC",
+      "start_time": "2027-04-04T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5862586",
+      "home": "Triangle United Soccer Association",
+      "away": "Wake FC",
+      "start_time": "2027-04-10T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5863816",
+      "home": "Carolina Velocity FC",
+      "away": "Queen City Mutiny FC",
+      "start_time": "2027-04-10T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864298",
+      "home": "Charleston SC",
+      "away": "Carolina Core FC",
+      "start_time": "2027-04-10T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864390",
+      "home": "Lowcountry United",
+      "away": "Fox Soccer Academy Carolinas",
+      "start_time": "2027-04-10T17:00:00Z",
+      "location": {
+        "id": 52105,
+        "name": "Bayview Soccer Complex - Field 1"
+      }
+    },
+    {
+      "game_id": "5863768",
+      "home": "Carolina Velocity FC",
+      "away": "Wake FC",
+      "start_time": "2027-04-11T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864214",
+      "home": "Charleston SC",
+      "away": "Fox Soccer Academy Carolinas",
+      "start_time": "2027-04-11T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864304",
+      "home": "Lowcountry United",
+      "away": "Carolina Core FC",
+      "start_time": "2027-04-11T13:00:00Z",
+      "location": {
+        "id": 52105,
+        "name": "Bayview Soccer Complex - Field 1"
+      }
+    },
+    {
+      "game_id": "5862238",
+      "home": "Queen City Mutiny FC",
+      "away": "Lowcountry United",
+      "start_time": "2027-04-17T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864520",
+      "home": "Fox Soccer Academy Carolinas",
+      "away": "Triangle United Soccer Association",
+      "start_time": "2027-04-17T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5862160",
+      "home": "Queen City Mutiny FC",
+      "away": "Carolina Velocity FC",
+      "start_time": "2027-04-18T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5862964",
+      "home": "Carolina Core FC",
+      "away": "Wake FC",
+      "start_time": "2027-04-18T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864086",
+      "home": "Charlotte Independence Soccer Club",
+      "away": "Triangle United Soccer Association",
+      "start_time": "2027-04-18T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864921",
+      "home": "Charlotte Eagles",
+      "away": "Fox Soccer Academy Carolinas",
+      "start_time": "2027-04-18T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5862490",
+      "home": "Triangle United Soccer Association",
+      "away": "Carolina Velocity FC",
+      "start_time": "2027-04-25T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864662",
+      "home": "Fox Soccer Academy Carolinas",
+      "away": "Carolina Core FC",
+      "start_time": "2027-04-25T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864885",
+      "home": "Charlotte Eagles",
+      "away": "Charlotte Independence Soccer Club",
+      "start_time": "2027-04-25T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5862634",
+      "home": "Wake FC",
+      "away": "Queen City Mutiny FC",
+      "start_time": "2027-04-25T15:00:00Z",
+      "location": {
+        "id": 66,
+        "name": "Ting Park - Ting Park 1"
+      }
+    },
+    {
+      "game_id": "5862196",
+      "home": "Queen City Mutiny FC",
+      "away": "Fox Soccer Academy Carolinas",
+      "start_time": "2027-05-02T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5863927",
+      "home": "Carolina Velocity FC",
+      "away": "Carolina Core FC",
+      "start_time": "2027-05-02T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864831",
+      "home": "Charlotte Eagles",
+      "away": "Triangle United Soccer Association",
+      "start_time": "2027-05-02T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5863786",
+      "home": "Carolina Velocity FC",
+      "away": "Triangle United Soccer Association",
+      "start_time": "2027-05-08T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5862826",
+      "home": "Carolina Core FC",
+      "away": "Fox Soccer Academy Carolinas",
+      "start_time": "2027-05-08T15:00:00Z",
+      "location": {
+        "id": 51925,
+        "name": "Phillips Park Soccer Complex Field #1"
+      }
+    },
+    {
+      "game_id": "5862934",
+      "home": "Carolina Core FC",
+      "away": "Triangle United Soccer Association",
+      "start_time": "2027-05-16T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864013",
+      "home": "Charlotte Independence Soccer Club",
+      "away": "Fox Soccer Academy Carolinas",
+      "start_time": "2027-05-16T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    },
+    {
+      "game_id": "5864867",
+      "home": "Charlotte Eagles",
+      "away": "Queen City Mutiny FC",
+      "start_time": "2027-05-16T10:00:00Z",
+      "location": {
+        "id": 52314,
+        "name": "TBD"
+      }
+    }
+  ]
+}
