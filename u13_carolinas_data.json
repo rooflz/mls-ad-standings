@@ -323,6 +323,54 @@
         "display": "Soccer.com - #2",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Soccer.com%20Center%2C%20Efland%2C%20NC"
       }
+    },
+    {
+      "game_id": "5862526",
+      "home": "Triangle United Soccer Association",
+      "away": "Lowcountry United",
+      "home_score": 1,
+      "away_score": 5,
+      "start_time": "2026-10-18T13:00:00Z",
+      "location": {
+        "display": "Southern Community Park - Field 1",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Southern%20Community%20Park%2C%20Chapel%20Hill%2C%20NC"
+      }
+    },
+    {
+      "game_id": "5862862",
+      "home": "Carolina Core FC",
+      "away": "Charleston SC",
+      "home_score": 1,
+      "away_score": 0,
+      "start_time": "2026-10-18T13:00:00Z",
+      "location": {
+        "display": "Phillips Park Soccer Complex Field #1",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Phillips%20Park%20Soccer%20Complex%2C%20High%20Point%2C%20NC"
+      }
+    },
+    {
+      "game_id": "5864116",
+      "home": "Charlotte Independence Soccer Club",
+      "away": "Wake FC",
+      "home_score": 1,
+      "away_score": 3,
+      "start_time": "2026-10-18T15:00:00Z",
+      "location": {
+        "display": "Richard Barry Memorial Park - Field 2",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Richard%20Barry%20Memorial%20Park%2C%20Charlotte%2C%20NC"
+      }
+    },
+    {
+      "game_id": "5863810",
+      "home": "Carolina Velocity FC",
+      "away": "Queen City Mutiny FC",
+      "home_score": 2,
+      "away_score": 1,
+      "start_time": "2026-10-18T16:30:00Z",
+      "location": {
+        "display": "Middle Creek Park - field 2",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Middle%20Creek%20Park%2C%20Raleigh%2C%20NC"
+      }
     }
   ],
   "upcoming": [
@@ -334,46 +382,6 @@
       "location": {
         "display": "Phillips Park Soccer Complex Field #1",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Phillips%20Park%20Soccer%20Complex%2C%20High%20Point%2C%20NC"
-      }
-    },
-    {
-      "game_id": "5862526",
-      "home": "Triangle United Soccer Association",
-      "away": "Lowcountry United",
-      "start_time": "2026-10-18T13:00:00Z",
-      "location": {
-        "display": "Southern Community Park - Field 1",
-        "maps_url": "https://www.google.com/maps/search/?api=1&query=Southern%20Community%20Park%2C%20Chapel%20Hill%2C%20NC"
-      }
-    },
-    {
-      "game_id": "5862862",
-      "home": "Carolina Core FC",
-      "away": "Charleston SC",
-      "start_time": "2026-10-18T13:00:00Z",
-      "location": {
-        "display": "Phillips Park Soccer Complex Field #1",
-        "maps_url": "https://www.google.com/maps/search/?api=1&query=Phillips%20Park%20Soccer%20Complex%2C%20High%20Point%2C%20NC"
-      }
-    },
-    {
-      "game_id": "5864116",
-      "home": "Charlotte Independence Soccer Club",
-      "away": "Wake FC",
-      "start_time": "2026-10-18T15:00:00Z",
-      "location": {
-        "display": "Richard Barry Memorial Park - Field 2",
-        "maps_url": "https://www.google.com/maps/search/?api=1&query=Richard%20Barry%20Memorial%20Park%2C%20Charlotte%2C%20NC"
-      }
-    },
-    {
-      "game_id": "5863810",
-      "home": "Carolina Velocity FC",
-      "away": "Queen City Mutiny FC",
-      "start_time": "2026-10-18T16:30:00Z",
-      "location": {
-        "display": "Middle Creek Park - field 2",
-        "maps_url": "https://www.google.com/maps/search/?api=1&query=Middle%20Creek%20Park%2C%20Raleigh%2C%20NC"
       }
     },
     {
