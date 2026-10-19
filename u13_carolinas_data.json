@@ -371,6 +371,18 @@
         "display": "Middle Creek Park - field 2",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Middle%20Creek%20Park%2C%20Raleigh%2C%20NC"
       }
+    },
+    {
+      "game_id": "5864559",
+      "home": "Fox Soccer Academy Carolinas",
+      "away": "Charlotte Eagles",
+      "home_score": 1,
+      "away_score": 2,
+      "start_time": "2026-10-18T19:00:00Z",
+      "location": {
+        "display": "Cornelius Rd Park - Field 3/Turf",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Cornelius%20Rd%20Park%20/Turf%2C%20Charlotte%2C%20NC"
+      }
     }
   ],
   "upcoming": [
@@ -382,16 +394,6 @@
       "location": {
         "display": "Phillips Park Soccer Complex Field #1",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Phillips%20Park%20Soccer%20Complex%2C%20High%20Point%2C%20NC"
-      }
-    },
-    {
-      "game_id": "5864559",
-      "home": "Fox Soccer Academy Carolinas",
-      "away": "Charlotte Eagles",
-      "start_time": "2026-10-18T19:00:00Z",
-      "location": {
-        "display": "Cornelius Rd Park - Field 3/Turf",
-        "maps_url": "https://www.google.com/maps/search/?api=1&query=Cornelius%20Rd%20Park%20/Turf%2C%20Charlotte%2C%20NC"
       }
     },
     {
