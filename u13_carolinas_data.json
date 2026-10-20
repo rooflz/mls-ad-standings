@@ -313,6 +313,18 @@
       }
     },
     {
+      "game_id": "5862844",
+      "home": "Carolina Core FC",
+      "away": "Lowcountry United",
+      "home_score": 3,
+      "away_score": 1,
+      "start_time": "2026-10-17T17:00:00Z",
+      "location": {
+        "display": "Phillips Park Soccer Complex Field #1",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Phillips%20Park%20Soccer%20Complex%2C%20High%20Point%2C%20NC"
+      }
+    },
+    {
       "game_id": "5862544",
       "home": "Triangle United Soccer Association",
       "away": "Charleston SC",
@@ -386,16 +398,6 @@
     }
   ],
   "upcoming": [
-    {
-      "game_id": "5862844",
-      "home": "Carolina Core FC",
-      "away": "Lowcountry United",
-      "start_time": "2026-10-17T17:00:00Z",
-      "location": {
-        "display": "Phillips Park Soccer Complex Field #1",
-        "maps_url": "https://www.google.com/maps/search/?api=1&query=Phillips%20Park%20Soccer%20Complex%2C%20High%20Point%2C%20NC"
-      }
-    },
     {
       "game_id": "5862670",
       "home": "Wake FC",
