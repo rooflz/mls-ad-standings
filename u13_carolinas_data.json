@@ -449,16 +449,6 @@
       }
     },
     {
-      "game_id": "5864354",
-      "home": "Lowcountry United",
-      "away": "Charlotte Independence Soccer Club",
-      "start_time": "2026-10-31T17:00:00Z",
-      "location": {
-        "display": "Bayview Soccer Complex - Field 1",
-        "maps_url": "https://www.google.com/maps/search/?api=1&query=Bayview%20Soccer%20Complex%2C%20Dorchester%2C%20SC"
-      }
-    },
-    {
       "game_id": "5864257",
       "home": "Charleston SC",
       "away": "Fox Soccer Academy Carolinas",
@@ -466,6 +456,16 @@
       "location": {
         "display": "CSC Daniel Island Soccer Complex - Field 2",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=CSC%20Daniel%20Island%20Soccer%20Complex%2C%20Charleston%2C%20SC"
+      }
+    },
+    {
+      "game_id": "5864354",
+      "home": "Lowcountry United",
+      "away": "Charlotte Independence Soccer Club",
+      "start_time": "2026-10-31T21:00:00Z",
+      "location": {
+        "display": "Bayview Soccer Complex - Field 1",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Bayview%20Soccer%20Complex%2C%20Dorchester%2C%20SC"
       }
     },
     {
