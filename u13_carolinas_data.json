@@ -395,19 +395,21 @@
         "display": "Cornelius Rd Park - Field 3/Turf",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Cornelius%20Rd%20Park%20/Turf%2C%20Charlotte%2C%20NC"
       }
-    }
-  ],
-  "upcoming": [
+    },
     {
       "game_id": "5862670",
       "home": "Wake FC",
       "away": "Charlotte Eagles",
+      "home_score": 1,
+      "away_score": 1,
       "start_time": "2026-10-24T16:00:00Z",
       "location": {
         "display": "Holly Springs High School - Field 1",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Holly%20Springs%20High%20School%2C%20Holly%20Springs%2C%20NC"
       }
-    },
+    }
+  ],
+  "upcoming": [
     {
       "game_id": "5862898",
       "home": "Carolina Core FC",
