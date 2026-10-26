@@ -407,13 +407,13 @@
         "display": "Holly Springs High School - Field 1",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Holly%20Springs%20High%20School%2C%20Holly%20Springs%2C%20NC"
       }
-    }
-  ],
-  "upcoming": [
+    },
     {
       "game_id": "5862898",
       "home": "Carolina Core FC",
       "away": "Carolina Velocity FC",
+      "home_score": 3,
+      "away_score": 2,
       "start_time": "2026-10-25T13:00:00Z",
       "location": {
         "display": "Ivey Redmon Sports Complex - Field 2",
@@ -424,6 +424,8 @@
       "game_id": "5862562",
       "home": "Triangle United Soccer Association",
       "away": "Charlotte Independence Soccer Club",
+      "home_score": 0,
+      "away_score": 0,
       "start_time": "2026-10-25T17:00:00Z",
       "location": {
         "display": "Cedar Falls Park - #3",
@@ -434,12 +436,16 @@
       "game_id": "5864945",
       "home": "Charlotte Eagles",
       "away": "Lowcountry United",
+      "home_score": 1,
+      "away_score": 0,
       "start_time": "2026-10-25T19:00:00Z",
       "location": {
         "display": "Charlotte Eagles Soccer Complex - Field 1",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Charlotte%20Eagles%20Soccer%20Complex%2C%20Charlotte%2C%20NC"
       }
-    },
+    }
+  ],
+  "upcoming": [
     {
       "game_id": "5863846",
       "home": "Carolina Velocity FC",
