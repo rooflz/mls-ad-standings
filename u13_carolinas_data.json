@@ -577,16 +577,6 @@
       }
     },
     {
-      "game_id": "5864969",
-      "home": "Charlotte Eagles",
-      "away": "Charleston SC",
-      "start_time": "2026-11-14T11:00:00Z",
-      "location": {
-        "display": "TBD",
-        "maps_url": "https://www.google.com/maps/search/?api=1&query=TBD%2C%20Charlotte%2C%20NC"
-      }
-    },
-    {
       "game_id": "5862802",
       "home": "Wake FC",
       "away": "Carolina Velocity FC",
@@ -1171,6 +1161,16 @@
       "home": "Charlotte Eagles",
       "away": "Queen City Mutiny FC",
       "start_time": "2027-05-16T10:00:00Z",
+      "location": {
+        "display": "TBD",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=TBD%2C%20Charlotte%2C%20NC"
+      }
+    },
+    {
+      "game_id": "5864969",
+      "home": "Charlotte Eagles",
+      "away": "Charleston SC",
+      "start_time": "2027-06-08T10:00:00Z",
       "location": {
         "display": "TBD",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=TBD%2C%20Charlotte%2C%20NC"
