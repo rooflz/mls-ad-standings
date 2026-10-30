@@ -587,16 +587,6 @@
       }
     },
     {
-      "game_id": "5863870",
-      "home": "Carolina Velocity FC",
-      "away": "Charlotte Independence Soccer Club",
-      "start_time": "2026-12-05T16:00:00Z",
-      "location": {
-        "display": "TBD",
-        "maps_url": "https://www.google.com/maps/search/?api=1&query=TBD%2C%20Raleigh%2C%20NC"
-      }
-    },
-    {
       "game_id": "5864141",
       "home": "Charleston SC",
       "away": "Triangle United Soccer Association",
@@ -664,6 +654,16 @@
       "location": {
         "display": "TBD",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=TBD%2C%20Holly%20Springs%2C%20NC"
+      }
+    },
+    {
+      "game_id": "5863870",
+      "home": "Carolina Velocity FC",
+      "away": "Charlotte Independence Soccer Club",
+      "start_time": "2027-01-31T16:00:00Z",
+      "location": {
+        "display": "TBD",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=TBD%2C%20Raleigh%2C%20NC"
       }
     },
     {
