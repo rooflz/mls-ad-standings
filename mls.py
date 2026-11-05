@@ -6,7 +6,7 @@ import urllib.request
 from datetime import datetime
 from pathlib import Path
 
-FEED_URL = "https://mls-assist.theintelligenceplatform.com/data/schedule/mls-next-2-academy-division-26-27.json"
+FEED_URL = "https://mls-assist.theintelligenceplatform.com/data/standings/mls-next-2-academy-division-26-27.json"
 OUTPUT_HTML = "index.html"
 MATCHES_CACHE = "u13_carolinas_data.json"
 
@@ -195,7 +195,50 @@ def fetch_all_matches() -> tuple[list, list]:
     with urllib.request.urlopen(req, timeout=30) as resp:
         payload = json.loads(resp.read().decode("utf-8"))
 
-    events = payload.get("events", [])
+    if isinstance(payload.get("competition_season"), dict):
+        cs = payload["competition_season"]
+        events = cs.get("events", [])
+        orgs_by_id = {
+            o["id"]: o.get("name", "")
+            for o in cs.get("organisations", [])
+            if isinstance(o, dict) and "id" in o
+        }
+        locs_by_id = {
+            loc["id"]: loc
+            for loc in cs.get("event_locations", [])
+            if isinstance(loc, dict) and "id" in loc
+        }
+        age_groups_by_id = {
+            ag["id"]: ag.get("name", "")
+            for ag in cs.get("age_groups", [])
+            if isinstance(ag, dict) and "id" in ag
+        }
+        brackets_by_id = {}
+        for stage in cs.get("competition_season_stages", []):
+            if not isinstance(stage, dict):
+                continue
+            for b in stage.get("competition_brackets", []):
+                if isinstance(b, dict) and "id" in b:
+                    brackets_by_id[b["id"]] = {
+                        "name": b.get("name", ""),
+                        "age_group": age_groups_by_id.get(b.get("age_group_id"), ""),
+                    }
+            for cat in stage.get("competition_stage_categories", []):
+                if not isinstance(cat, dict):
+                    continue
+                cat_ag = age_groups_by_id.get(cat.get("age_group_id"), "")
+                for b in cat.get("competition_brackets", []):
+                    if isinstance(b, dict) and "id" in b:
+                        brackets_by_id[b["id"]] = {
+                            "name": b.get("name", ""),
+                            "age_group": cat_ag or age_groups_by_id.get(b.get("age_group_id"), ""),
+                        }
+    else:
+        events = payload.get("events", [])
+        orgs_by_id = {}
+        locs_by_id = {}
+        brackets_by_id = {}
+
     print(f"Total events in season feed: {len(events)}")
 
     completed_matches = []
@@ -203,13 +246,36 @@ def fetch_all_matches() -> tuple[list, list]:
     seen_ids = set()
 
     for ev in events:
-        division_str = str(ev.get("division") or "").strip()
+        bracket = brackets_by_id.get(ev.get("competition_bracket_id"), {})
+        raw_div = ev.get("division")
+        if isinstance(raw_div, dict):
+            division_str = str(raw_div.get("name") or "").strip()
+        elif raw_div:
+            division_str = str(raw_div).strip()
+        else:
+            division_str = str(bracket.get("name") or "").strip()
+
+        age_group_str = str(bracket.get("age_group") or "").strip()
         home_squad = str(ev.get("home_squad_name") or "")
         away_squad = str(ev.get("away_squad_name") or "")
-        home_org = str(ev.get("home_organisation") or "")
-        away_org = str(ev.get("away_organisation") or "")
 
-        is_u13 = any("u13" in s.lower() for s in [division_str, home_squad, away_squad])
+        raw_home_org = ev.get("home_organisation")
+        if isinstance(raw_home_org, dict):
+            home_org = str(raw_home_org.get("name") or "")
+        elif raw_home_org:
+            home_org = str(raw_home_org)
+        else:
+            home_org = str(orgs_by_id.get(ev.get("home_organisation_id")) or "")
+
+        raw_away_org = ev.get("away_organisation")
+        if isinstance(raw_away_org, dict):
+            away_org = str(raw_away_org.get("name") or "")
+        elif raw_away_org:
+            away_org = str(raw_away_org)
+        else:
+            away_org = str(orgs_by_id.get(ev.get("away_organisation_id")) or "")
+
+        is_u13 = any("u13" in s.lower() for s in [division_str, age_group_str, home_squad, away_squad])
         if not is_u13:
             continue
 
@@ -228,7 +294,8 @@ def fetch_all_matches() -> tuple[list, list]:
         a_score = ev.get("away_score")
         is_completed = ev.get("completed", False)
         start_time = ev.get("start_time", "")
-        location_data = parse_location(ev.get("event_location"), home_team=home_team)
+        raw_loc = ev.get("event_location") or locs_by_id.get(ev.get("event_location_id"))
+        location_data = parse_location(raw_loc, home_team=home_team)
 
         has_scores = h_score is not None and a_score is not None
         is_real_game = has_scores and not (is_completed is False and int(h_score) == 0 and int(a_score) == 0)
