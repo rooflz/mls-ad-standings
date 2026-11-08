@@ -503,23 +503,13 @@
         "display": "Cedar Falls Park - #3",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Cedar%20Falls%20Park%20-%20%233%2C%20Chapel%20Hill%2C%20NC"
       }
-    }
-  ],
-  "upcoming": [
-    {
-      "game_id": "5864328",
-      "home": "Lowcountry United",
-      "away": "Fox Soccer Academy Carolinas",
-      "start_time": "2026-11-01T14:00:00Z",
-      "location": {
-        "display": "Bayview Soccer Complex - Field 1",
-        "maps_url": "https://www.google.com/maps/search/?api=1&query=Bayview%20Soccer%20Complex%2C%20Dorchester%2C%20SC"
-      }
     },
     {
       "game_id": "5862568",
       "home": "Triangle United Soccer Association",
       "away": "Charlotte Eagles",
+      "home_score": 0,
+      "away_score": 2,
       "start_time": "2026-11-07T15:00:00Z",
       "location": {
         "display": "Cedar Falls Park - #3",
@@ -530,6 +520,8 @@
       "game_id": "5864122",
       "home": "Charleston SC",
       "away": "Wake FC",
+      "home_score": 1,
+      "away_score": 0,
       "start_time": "2026-11-07T18:00:00Z",
       "location": {
         "display": "Woodland High School - Stadium (Turf)",
@@ -540,7 +532,21 @@
       "game_id": "5864396",
       "home": "Lowcountry United",
       "away": "Carolina Velocity FC",
+      "home_score": 3,
+      "away_score": 4,
       "start_time": "2026-11-07T18:00:00Z",
+      "location": {
+        "display": "Bayview Soccer Complex - Field 1",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Bayview%20Soccer%20Complex%2C%20Dorchester%2C%20SC"
+      }
+    }
+  ],
+  "upcoming": [
+    {
+      "game_id": "5864328",
+      "home": "Lowcountry United",
+      "away": "Fox Soccer Academy Carolinas",
+      "start_time": "2026-11-01T14:00:00Z",
       "location": {
         "display": "Bayview Soccer Complex - Field 1",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Bayview%20Soccer%20Complex%2C%20Dorchester%2C%20SC"
