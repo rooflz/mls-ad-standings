@@ -539,6 +539,54 @@
         "display": "Bayview Soccer Complex - Field 1",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Bayview%20Soccer%20Complex%2C%20Dorchester%2C%20SC"
       }
+    },
+    {
+      "game_id": "5864490",
+      "home": "Lowcountry United",
+      "away": "Wake FC",
+      "home_score": 2,
+      "away_score": 5,
+      "start_time": "2026-11-08T14:00:00Z",
+      "location": {
+        "display": "Bayview Soccer Complex - Field 1",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Bayview%20Soccer%20Complex%2C%20Dorchester%2C%20SC"
+      }
+    },
+    {
+      "game_id": "5864208",
+      "home": "Charleston SC",
+      "away": "Carolina Velocity FC",
+      "home_score": 2,
+      "away_score": 1,
+      "start_time": "2026-11-08T15:45:00Z",
+      "location": {
+        "display": "Woodland High School - Stadium (Turf)",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Woodland%20High%20School%2C%20Dorchester%2C%20SC"
+      }
+    },
+    {
+      "game_id": "5863945",
+      "home": "Charlotte Independence Soccer Club",
+      "away": "Carolina Core FC",
+      "home_score": 2,
+      "away_score": 3,
+      "start_time": "2026-11-08T16:00:00Z",
+      "location": {
+        "display": "Bailey Road Park - Field 2",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Bailey%20Road%20Park%2C%20Charlotte%2C%20NC"
+      }
+    },
+    {
+      "game_id": "5864538",
+      "home": "Fox Soccer Academy Carolinas",
+      "away": "Queen City Mutiny FC",
+      "home_score": 2,
+      "away_score": 0,
+      "start_time": "2026-11-08T18:00:00Z",
+      "location": {
+        "display": "Langtree Charter Academy Upper - Field 1/Turf",
+        "maps_url": "https://www.google.com/maps/search/?api=1&query=Langtree%20Charter%20Academy%20Upper%20/Turf%2C%20Charlotte%2C%20NC"
+      }
     }
   ],
   "upcoming": [
@@ -550,46 +598,6 @@
       "location": {
         "display": "Bayview Soccer Complex - Field 1",
         "maps_url": "https://www.google.com/maps/search/?api=1&query=Bayview%20Soccer%20Complex%2C%20Dorchester%2C%20SC"
-      }
-    },
-    {
-      "game_id": "5864490",
-      "home": "Lowcountry United",
-      "away": "Wake FC",
-      "start_time": "2026-11-08T14:00:00Z",
-      "location": {
-        "display": "Bayview Soccer Complex - Field 1",
-        "maps_url": "https://www.google.com/maps/search/?api=1&query=Bayview%20Soccer%20Complex%2C%20Dorchester%2C%20SC"
-      }
-    },
-    {
-      "game_id": "5864208",
-      "home": "Charleston SC",
-      "away": "Carolina Velocity FC",
-      "start_time": "2026-11-08T15:45:00Z",
-      "location": {
-        "display": "Woodland High School - Stadium (Turf)",
-        "maps_url": "https://www.google.com/maps/search/?api=1&query=Woodland%20High%20School%2C%20Dorchester%2C%20SC"
-      }
-    },
-    {
-      "game_id": "5863945",
-      "home": "Charlotte Independence Soccer Club",
-      "away": "Carolina Core FC",
-      "start_time": "2026-11-08T16:00:00Z",
-      "location": {
-        "display": "Bailey Road Park - Field 2",
-        "maps_url": "https://www.google.com/maps/search/?api=1&query=Bailey%20Road%20Park%2C%20Charlotte%2C%20NC"
-      }
-    },
-    {
-      "game_id": "5864538",
-      "home": "Fox Soccer Academy Carolinas",
-      "away": "Queen City Mutiny FC",
-      "start_time": "2026-11-08T18:00:00Z",
-      "location": {
-        "display": "Langtree Charter Academy Upper - Field 1/Turf",
-        "maps_url": "https://www.google.com/maps/search/?api=1&query=Langtree%20Charter%20Academy%20Upper%20/Turf%2C%20Charlotte%2C%20NC"
       }
     },
     {
